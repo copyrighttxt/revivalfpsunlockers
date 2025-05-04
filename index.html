@@ -1,29 +1,49 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FPS Unlockers yo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FPS Unlockers</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #121212;
-      color: #e0e0e0;
       margin: 0;
       padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #100000;
+      color: #ffeaea;
+      overflow-x: hidden;
+      position: relative;
     }
+
+    canvas#stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    header, .downloads {
+      position: relative;
+      z-index: 1;
+    }
+
     header {
       text-align: center;
       padding: 3em 1em 1em;
+      animation: fadeIn 1.5s ease-out;
     }
+
     header h1 {
-      color: #36d1c4;
-      margin-bottom: 0.2em;
+      color: #ff6666;
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+      animation: slideInDown 1s ease-out;
     }
-    header p {
-      font-size: 1.1em;
-      color: #ccc;
-    }
+
     .buttons {
       display: flex;
       justify-content: center;
@@ -31,72 +51,188 @@
       margin: 1.5em 0;
       flex-wrap: wrap;
     }
+
     .buttons a {
       text-decoration: none;
-      background: #36d1c4;
-      color: #000;
+      background: #660000;
+      color: #fff;
       padding: 0.75em 1.5em;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .buttons a:hover {
-      background: #2bb6a8;
-    }
-    .downloads {
-      text-align: center;
-      margin: 2em auto;
-      max-width: 800px;
-    }
-    .download-entry {
-      background: #1e1e1e;
-      padding: 1em;
-      margin: 1em auto;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
     }
-    .download-entry p {
-      color: #ccc;
-      margin-bottom: 0.5em;
+
+    .buttons a:hover {
+      background: #990000;
+      transform: scale(1.05);
     }
-    .download-entry a {
+
+    .downloads {
+      max-width: 800px;
+      margin: 2em auto;
+      text-align: center;
+    }
+
+    .download-entry {
+      background: #200000;
+      padding: 1em 1.5em 1em 1em;
+      margin: 1em auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .download-entry:hover {
+      background: #2a0000;
+    }
+
+    .download-entry .title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #ffb3b3;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    .download-entry .arrow {
+      transition: transform 0.3s ease;
+      font-size: 1.2em;
+    }
+
+    .download-entry.open .arrow {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-out;
+    }
+
+    .download-entry.open .dropdown-content {
+      max-height: 200px;
+    }
+
+    .dropdown-content a {
       display: inline-block;
       margin-top: 0.5em;
-      background: #36d1c4;
-      color: #000;
+      background: #660000;
+      color: #fff;
       padding: 0.5em 1em;
       border-radius: 5px;
       font-weight: bold;
       text-decoration: none;
+      transition: background 0.3s, transform 0.3s;
     }
-    .download-entry a:hover {
-      background: #2bb6a8;
+
+    .dropdown-content a:hover {
+      background: #990000;
+      transform: scale(1.05);
     }
-    footer {
-      display: none;
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideInDown {
+      from {
+        transform: translateY(-30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
   </style>
 </head>
 <body>
+  <canvas id="stars"></canvas>
   <header>
-    <h1>FPS Unlockers I've made for ROBLOX Revivals.</h1>
-        <div class="buttons">
+    <h1>FPS Unlockers</h1>
+    <div class="buttons">
       <a href="https://github.com/copyrighttxt">GitHub Profile</a>
     </div>
   </header>
+
   <section class="downloads">
     <div class="download-entry">
-      <p>2021 Subter.org FPS Unlocker.</p>
-      <a href="https://github.com/copyrighttxt/subter-sfu/releases/download/v1.0.0/RFU.exe">Download EXE</a>
+      <div class="title-row">
+        <span>2021 Subter.org FPS Unlocker</span>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="dropdown-content">
+        <a href="https://github.com/copyrighttxt/subter-sfu/releases/download/v1.0.0/RFU.exe">Download EXE</a>
+      </div>
     </div>
     <div class="download-entry">
-      <p>2018 Vortexi.cc FPS Unlocker.</p>
-      <a href="https://github.com/copyrighttxt/vortexi-vfu/releases/download/1.0/VFU-x64.zip">Download ZIP</a>
+      <div class="title-row">
+        <span>2018 Vortexi.cc FPS Unlocker</span>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="dropdown-content">
+        <a href="https://github.com/copyrighttxt/vortexi-vfu/releases/download/1.0/VFU-x64.zip">Download ZIP</a>
+      </div>
     </div>
     <div class="download-entry">
-      <p>2018 Subter.org FPS Unlocker.</p>
-      <a href="https://github.com/copyrighttxt/sfu-2018/releases/download/1.0/SFU-x64.zip">Download ZIP</a>
+      <div class="title-row">
+        <span>2018 Subter.org FPS Unlocker</span>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="dropdown-content">
+        <a href="https://github.com/copyrighttxt/sfu-2018/releases/download/1.0/SFU-x64.zip">Download ZIP</a>
+      </div>
     </div>
   </section>
+
+  <script>
+    document.querySelectorAll('.download-entry').forEach(entry => {
+      entry.addEventListener('click', () => {
+        entry.classList.toggle('open');
+      });
+    });
+
+    const canvas = document.getElementById('stars');
+    const ctx = canvas.getContext('2d');
+    let dots = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    for (let i = 0; i < 100; i++) {
+      dots.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 1.5 + 0.5,
+        speed: Math.random() * 0.5 + 0.2
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#ffffff';
+      dots.forEach(dot => {
+        ctx.beginPath();
+        ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
+        ctx.fill();
+        dot.y += dot.speed;
+        if (dot.y > canvas.height) {
+          dot.y = 0;
+          dot.x = Math.random() * canvas.width;
+        }
+      });
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
 </body>
 </html>
