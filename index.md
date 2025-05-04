@@ -1,9 +1,5 @@
 ---
-title: Home
-layout: default
 ---
-
-# Welcome
 
 <div class="download-buttons">
   <a class="download-button" href="https://github.com/copyrighttxt/subter-sfu/releases/download/v1.0.0/RFU.exe" download>
