@@ -1,11 +1,12 @@
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FPS Unlockers</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FPS Unlockers</title>
+<style>
     body {
       margin: 0;
       padding: 0;
@@ -147,48 +148,141 @@
         opacity: 1;
       }
     }
-  </style>
+  
+.buttons a {
+    background-color: #ccffcc;
+    color: #003300;
+    padding: 0.6em 1.2em;
+    border: 2px solid #99dd99;
+    border-radius: 8px;
+    text-decoration: none;
+    margin: 0 0.5em;
+    display: inline-block;
+    font-weight: bold;
+}
+.buttons a:hover {
+    background-color: #b3ffb3;
+}
+
+.theme-button {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    padding: 0.5em 1em;
+    background-color: #ccffcc;
+    border: 1px solid #99dd99;
+    color: #003300;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+.mint-theme {
+    background-color: #eaffea !important;
+    color: #003300 !important;
+}
+.mint-theme .buttons a {
+    background-color: #ccffcc !important;
+    color: #003300 !important;
+    border-color: #99dd99 !important;
+}
+
+.dark-theme {
+    background-color: #1e1e1e !important;
+    color: #ffffff !important;
+}
+.dark-theme .buttons a {
+    background-color: #333333 !important;
+    color: #ffffff !important;
+    border-color: #666666 !important;
+}
+.dark-theme canvas {
+    display: none !important;
+}
+
+.theme-button {
+    background-color: #ff4d4d;
+    border: 1px solid #cc0000;
+    color: white;
+}
+.dark-theme .theme-button {
+    background-color: #555555 !important;
+    border-color: #777777 !important;
+    color: white !important;
+}
+
+.dark-theme details,
+.dark-theme summary {
+    background-color: #2a2a2a !important;
+    color: #ffffff !important;
+    border: 1px solid #444444;
+    padding: 0.5em;
+    border-radius: 4px;
+    margin-bottom: 0.5em;
+}
+
+.dark-theme details,
+.dark-theme details summary,
+.dark-theme details[open] > * {
+    background-color: #2a2a2a !important;
+    color: #ffffff !important;
+    border: 1px solid #444444;
+    border-radius: 4px;
+    margin-bottom: 0.5em;
+}
+.dark-theme details summary {
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+.dark-theme details,
+.dark-theme details summary,
+.dark-theme details[open],
+.dark-theme details[open] summary,
+.dark-theme details[open] * {
+    background-color: #1c1c1c !important;
+    color: #ffffff !important;
+    border-color: #444 !important;
+}
+</style>
 </head>
-<body>
-  <canvas id="stars"></canvas>
-  <header>
-    <h1>FPS Unlockers</h1>
-    <div class="buttons">
-      <a href="https://github.com/copyrighttxt">GitHub Profile</a>
-    </div>
-  </header>
-
-  <section class="downloads">
-    <div class="download-entry">
-      <div class="title-row">
-        <span>2021 Subter FPS Unlocker</span>
-        <span class="arrow">▼</span>
-      </div>
-      <div class="dropdown-content">
-        <a href="https://github.com/copyrighttxt/subter-sfu/releases/download/v1.0.0/RFU.exe">Download EXE</a>
-      </div>
-    </div>
-    <div class="download-entry">
-      <div class="title-row">
-        <span>2018 Vortexi FPS Unlocker</span>
-        <span class="arrow">▼</span>
-      </div>
-      <div class="dropdown-content">
-        <a href="https://github.com/copyrighttxt/vortexi-vfu/releases/download/1.0/VFU-x64.zip">Download ZIP</a>
-      </div>
-    </div>
-    <div class="download-entry">
-      <div class="title-row">
-        <span>2018 Subter FPS Unlocker</span>
-        <span class="arrow">▼</span>
-      </div>
-      <div class="dropdown-content">
-        <a href="https://github.com/copyrighttxt/sfu-2018/releases/download/1.0/SFU-x64.zip">Download ZIP</a>
-      </div>
-    </div>
-  </section>
-
-  <script>
+<body><button class="theme-button" id="theme-toggle">Toggle Dark Mode</button>
+<canvas id="stars"></canvas>
+<header>
+<h1>FPS Unlockers</h1>
+<div class="buttons">
+<a href="https://github.com/copyrighttxt">GitHub Profile</a>
+<a href="https://github.com/copyrighttxt?tab=repositories">My repos</a></div>
+</header>
+<section class="downloads">
+<div class="download-entry">
+<div class="title-row">
+<span>2021 Subter FPS Unlocker</span>
+<span class="arrow">▼</span>
+</div>
+<div class="dropdown-content">
+<a href="https://github.com/copyrighttxt/subter-sfu/releases/download/v1.0.0/RFU.exe">Download EXE</a>
+</div>
+</div>
+<div class="download-entry">
+<div class="title-row">
+<span>2018 Vortexi FPS Unlocker</span>
+<span class="arrow">▼</span>
+</div>
+<div class="dropdown-content">
+<a href="https://github.com/copyrighttxt/vortexi-vfu/releases/download/1.0/VFU-x64.zip">Download ZIP</a>
+</div>
+</div>
+<div class="download-entry">
+<div class="title-row">
+<span>2018 Subter FPS Unlocker</span>
+<span class="arrow">▼</span>
+</div>
+<div class="dropdown-content">
+<a href="https://github.com/copyrighttxt/sfu-2018/releases/download/1.0/SFU-x64.zip">Download ZIP</a>
+</div>
+</div>
+</section>
+<script>
     document.querySelectorAll('.download-entry').forEach(entry => {
       entry.addEventListener('click', () => {
         entry.classList.toggle('open');
@@ -218,7 +312,7 @@
 
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = '#ffffff';
+      ctx.fillStyle = "#ccffcc";
       dots.forEach(dot => {
         ctx.beginPath();
         ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
@@ -234,5 +328,9 @@
 
     animate();
   </script>
-</body>
+<script>
+document.getElementById('theme-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('dark-theme');
+});
+</script></body>
 </html>
